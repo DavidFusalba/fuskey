@@ -1,0 +1,25 @@
+default partial alphanumeric_keys modifier_keys
+xkb_symbols "basic" {
+
+    // Start from standard EurKEY
+    include "eu(basic)"
+
+    name[Group1] = "FusKey Multilingual QWERTY";
+
+    // Direct acute vowels:
+    // AltGr + vowel       -> á é í ó ú
+    // AltGr + Shift+vowel -> Á É Í Ó Ú
+    key <AC01> { [ a, A, aacute, Aacute ] };
+    key <AD03> { [ e, E, eacute, Eacute ] };
+    key <AD08> { [ i, I, iacute, Iacute ] };
+    key <AD09> { [ o, O, oacute, Oacute ] };
+    key <AD07> { [ u, U, uacute, Uacute ] };
+
+    // Spanish / Catalan / French
+    key <AB06> { [ n, N, ntilde, Ntilde ] };
+    key <AB03> { [ c, C, ccedilla, Ccedilla ] };
+
+    // AltGr + ;       -> dead diaeresis, then vowel -> ä ë ï ö ü
+    // AltGr + Shift+; -> ·
+    key <AC10> { [ semicolon, colon, dead_diaeresis, periodcentered ] };
+};
